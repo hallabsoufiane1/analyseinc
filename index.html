@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Analyse Inc. — Digital Transformation & Automation</title>
+  <meta name="description" content="Analyse Inc. is a consulting firm specialized in digitalization, automation, and data analytics for the pharmaceutical and manufacturing industries." />
+  <meta name="theme-color" content="#0a2540" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Analyse Inc." />
+  <meta property="og:description" content="Digital Transformation & Automation for Life Sciences" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.analyseinc.ca/" />
+  <style>
+    /* --- CSS: clean, responsive, single-file --- */
+    :root {
+      --bg: #ffffff;
+      --text: #1f2937;    /* slate-800 */
+      --muted: #6b7280;   /* gray-500 */
+      --brand: #0a2540;   /* deep blue */
+      --brand-2: #2563eb; /* accent */
+      --card: #f3f4f6;    /* gray-100 */
+      --ring: rgba(37, 99, 235, 0.35);
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(2, 6, 23, .08);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg); line-height: 1.6; }
+    a { color: var(--brand-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    /* --- Nav --- */
+    header.site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; color: var(--brand); }
+    .brand .logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: inset 0 0 0 2px rgba(255,255,255,.35); }
+    .nav-links { display: flex; gap: 22px; }
+    .nav-links a { color: var(--text); font-weight: 600; }
+    .nav-cta { display: none; }
+    @media (min-width: 880px) {
+      .nav-cta { display: inline-flex; }
+    }
+    .button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--brand); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow); font-weight: 700; border: 0; cursor: pointer; }
+    .button:hover { filter: brightness(1.05); }
+    /* --- Hero --- */
+    .hero { padding: 80px 0 60px; background: radial-gradient(1200px 500px at 70% -100px, rgba(37,99,235,.08), transparent 60%),
+             radial-gradient(900px 400px at -10% -40px, rgba(10,37,64,.08), transparent 60%); }
+    .hero-grid { display: grid; gap: 30px; align-items: center; }
+    @media (min-width: 880px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 44px); color: var(--brand); line-height: 1.15; }
+    .hero p.lead { font-size: 18px; color: var(--muted); max-width: 64ch; }
+    .hero-card { background: var(--card); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); border: 1px solid #e5e7eb; }
+    .hero-card ul { margin: 0; padding: 0 0 0 18px; }
+    .hero-cta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
+    /* --- Sections --- */
+    section { padding: 64px 0; }
+    h2.section-title { font-size: clamp(24px, 3vw, 32px); margin: 0 0 16px; color: var(--brand); }
+    p.section-kicker { margin: 0 0 24px; color: var(--muted); }
+    /* --- Services --- */
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+    .card { background: var(--card); border-radius: var(--radius); padding: 20px; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
+    .card h3 { margin-top: 0; margin-bottom: 10px; }
+    /* --- Clients --- */
+    .logo-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; align-items: center; }
+    @media (min-width: 600px) { .logo-row { grid-template-columns: repeat(4, 1fr); } }
+    .logo { background: white; border-radius: 10px; padding: 14px; border: 1px solid #e5e7eb; text-align: center; color: var(--muted); min-height: 64px; display: grid; place-items: center; font-weight: 700; }
+    /* --- Contact --- */
+    .contact-card { display: grid; gap: 16px; background: var(--card); border-radius: 16px; padding: 22px; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
+    .contact-list { list-style: none; margin: 0; padding: 0; }
+    .contact-list li { margin: 6px 0; }
+    /* --- Footer --- */
+    footer { padding: 32px 0; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; }
+    .tiny { font-size: 12px; color: #9ca3af; }
+  </style>
+</head>
+<body>
+  <!-- NAV -->
+  <header class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="#top" aria-label="Analyse Inc. home">
+        <div class="logo" aria-hidden="true"></div>
+        <span>Analyse Inc.</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#clients">Clients</a>
+        <a href="#contact" class="nav-cta button">Contact</a>
+      </nav>
+    </div>
+  </header>
 
+  <!-- HERO -->
+  <main id="top" class="hero">
+    <div class="container hero-grid">
+      <div>
+        <h1>Digital Transformation & Automation for Life Sciences</h1>
+        <p class="lead">We help pharmaceutical and manufacturing organizations unlock data value, integrate MES/PI systems, and accelerate Industry 4.0 outcomes with pragmatic analytics and automation.</p>
+        <div class="hero-cta">
+          <a class="button" href="#contact">Contact Us</a>
+          <a class="button" href="#services" style="background:transparent;border:1px solid #cbd5e1;color:var(--brand)">Our Services</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="Key capabilities">
+        <strong>What we do</strong>
+        <ul>
+          <li>System Integration (MES & AVEVA PI)</li>
+          <li>Data Analytics & AI for manufacturing</li>
+          <li>Automation & Digitalization programs</li>
+          <li>Enablement, support & training</li>
+        </ul>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Us</h2>
+      <p class="section-kicker">Pragmatic experts in pharma & biotech manufacturing.</p>
+      <p>Analyse Inc. is a consulting firm specialized in digitalization, automation, and data analytics for the pharmaceutical and manufacturing industries. We help organizations optimize their operations and unlock the full potential of their data through innovative and tailored solutions.</p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="container">
+      <h2 class="section-title">Services</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <h3>System Integration (MES & PI)</h3>
+          <p>Connecting and optimizing production systems for seamless operations, data integrity, and regulatory compliance.</p>
+        </div>
+        <div class="card">
+          <h3>Data Analytics & AI</h3>
+          <p>Transforming raw data into insights to drive efficiency, quality, and continuous improvement across plants.</p>
+        </div>
+        <div class="card">
+          <h3>Automation & Digital Transformation</h3>
+          <p>Designing and implementing solutions aligned with Industry 4.0 standards—scalable, secure, and value-focused.</p>
+        </div>
+        <div class="card">
+          <h3>Enablement & Training</h3>
+          <p>Upskilling teams with hands-on guidance, best practices, and maintainable frameworks.</p>
+        </div>
+        <div class="card">
+          <h3>Support & Advisory</h3>
+          <p>From roadmap to run: on-demand expertise to accelerate delivery and de-risk critical initiatives.</p>
+        </div>
+        <div class="card">
+          <h3>Validation-Aware Delivery</h3>
+          <p>Approaches mindful of GxP, data integrity, and audit readiness in regulated environments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLIENTS -->
+  <section id="clients">
+    <div class="container">
+      <h2 class="section-title">Clients & Experience</h2>
+      <p class="section-kicker">Trusted by leaders in pharma & biotech.</p>
+      <div class="logo-row" aria-label="Selected clients">
+        <div class="logo">Sanofi</div>
+        <div class="logo">Regeneron</div>
+        <div class="logo">ETech Group</div>
+        <div class="logo">(Add more)</div>
+      </div>
+      <p class="tiny" style="margin-top:10px">Logos are for illustration. Use only if permissions are granted.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-card">
+        <ul class="contact-list">
+          <li>Email: <a href="mailto:contact@analyseinc.ca">contact@analyseinc.ca</a></li>
+          <li>LinkedIn: <a href="https://linkedin.com/in/soufianehallab" target="_blank" rel="noopener">Soufiane Hallab</a></li>
+        </ul>
+        <div>
+          <a class="button" href="mailto:contact@analyseinc.ca">Schedule a Conversation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div>© 2025 Analyse Inc. · Consulting in Digitalization & Automation</div>
+    </div>
+  </footer>
+
+  <!-- JSON-LD (optional) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Analyse Inc.",
+    "url": "https://www.analyseinc.ca/",
+    "sameAs": ["https://www.linkedin.com/in/soufianehallab"],
+    "description": "Digital Transformation & Automation for Life Sciences",
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "email": "contact@analyseinc.ca"
+    }]
+  }
+  </script>
+</body>
+</html>
