@@ -12,91 +12,59 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.analyseinc.ca/" />
   <style>
-    /* --- CSS: clean, responsive, single-file --- */
     :root {
       --bg: #ffffff;
-      --text: #1f2937;    /* slate-800 */
-      --muted: #6b7280;   /* gray-500 */
-      --brand: #0a2540;   /* deep blue */
-      --brand-2: #2563eb; /* accent */
-      --card: #f3f4f6;    /* gray-100 */
-      --ring: rgba(37, 99, 235, 0.35);
+      --text: #1f2937;
+      --muted: #6b7280;
+      --brand: #0a2540;
+      --brand-2: #2563eb;
+      --card: #f3f4f6;
       --radius: 14px;
       --shadow: 0 10px 30px rgba(2, 6, 23, .08);
     }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; color: var(--text); background: var(--bg); line-height: 1.6; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; color: var(--text); background: var(--bg); line-height: 1.6; }
     a { color: var(--brand-2); text-decoration: none; }
     a:hover { text-decoration: underline; }
     .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
-    /* --- Nav --- */
     header.site-nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.85); backdrop-filter: blur(8px); border-bottom: 1px solid #e5e7eb; }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
-    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .2px; color: var(--brand); }
-    .brand .logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); box-shadow: inset 0 0 0 2px rgba(255,255,255,.35); }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; color: var(--brand); }
+    .brand .logo { width: 28px; height: 28px; border-radius: 8px; background: linear-gradient(135deg, var(--brand), var(--brand-2)); }
     .nav-links { display: flex; gap: 22px; }
     .nav-links a { color: var(--text); font-weight: 600; }
-    .nav-cta { display: none; }
-    @media (min-width: 880px) {
-      .nav-cta { display: inline-flex; }
-    }
-    .button { display: inline-flex; align-items: center; gap: 8px; padding: 12px 16px; background: var(--brand); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow); font-weight: 700; border: 0; cursor: pointer; }
+    .button { display: inline-flex; align-items: center; padding: 12px 16px; background: var(--brand); color: #fff; border-radius: var(--radius); box-shadow: var(--shadow); font-weight: 700; border: 0; cursor: pointer; }
     .button:hover { filter: brightness(1.05); }
-    /* --- Hero --- */
-    .hero { padding: 80px 0 60px; background: radial-gradient(1200px 500px at 70% -100px, rgba(37,99,235,.08), transparent 60%),
-             radial-gradient(900px 400px at -10% -40px, rgba(10,37,64,.08), transparent 60%); }
+    .hero { padding: 80px 0 60px; background: radial-gradient(1200px 500px at 70% -100px, rgba(37,99,235,.08), transparent 60%), radial-gradient(900px 400px at -10% -40px, rgba(10,37,64,.08), transparent 60%); }
     .hero-grid { display: grid; gap: 30px; align-items: center; }
     @media (min-width: 880px) { .hero-grid { grid-template-columns: 1.15fr 0.85fr; } }
-    .hero h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 44px); color: var(--brand); line-height: 1.15; }
+    .hero h1 { margin: 0 0 12px; font-size: clamp(30px, 4vw, 44px); color: var(--brand); }
     .hero p.lead { font-size: 18px; color: var(--muted); max-width: 64ch; }
     .hero-card { background: var(--card); border-radius: 18px; padding: 24px; box-shadow: var(--shadow); border: 1px solid #e5e7eb; }
-    .hero-card ul { margin: 0; padding: 0 0 0 18px; }
-    .hero-cta { display: flex; gap: 12px; margin-top: 20px; flex-wrap: wrap; }
-    /* --- Sections --- */
     section { padding: 64px 0; }
-    h2.section-title { font-size: clamp(24px, 3vw, 32px); margin: 0 0 16px; color: var(--brand); }
-    p.section-kicker { margin: 0 0 24px; color: var(--muted); }
-    /* --- Services --- */
+    h2.section-title { font-size: clamp(24px, 3vw, 32px); color: var(--brand); }
+    p.section-kicker { color: var(--muted); }
     .grid { display: grid; gap: 16px; }
     @media (min-width: 720px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
     .card { background: var(--card); border-radius: var(--radius); padding: 20px; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
-    .card h3 { margin-top: 0; margin-bottom: 10px; }
-    /* --- Clients --- */
     .logo-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; align-items: center; }
     @media (min-width: 600px) { .logo-row { grid-template-columns: repeat(4, 1fr); } }
-    .logo { background: white; border-radius: 10px; padding: 14px; border: 1px solid #e5e7eb; text-align: center; color: var(--muted); min-height: 64px; display: grid; place-items: center; font-weight: 700; }
-    /* --- Contact --- */
-    .contact-card { display: grid; gap: 16px; background: var(--card); border-radius: 16px; padding: 22px; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
-    .contact-list { list-style: none; margin: 0; padding: 0; }
-    .contact-list li { margin: 6px 0; }
-    /* --- Footer --- */
-    footer { padding: 32px 0; border-top: 1px solid #e5e7eb; color: var(--muted); font-size: 14px; }
-    .tiny { font-size: 12px; color: #9ca3af; }
+    .logo { background: white; border-radius: 10px; padding: 14px; border: 1px solid #e5e7eb; text-align: center; }
+    .contact-card { background: var(--card); border-radius: 16px; padding: 22px; border: 1px solid #e5e7eb; box-shadow: var(--shadow); }
+    footer { padding: 32px 0; border-top: 1px solid #e5e7eb; color: #6b7280; font-size: 14px; }
   </style>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-GWJC4RP77M"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-GWJC4RP77M');
-  </script>
 </head>
 <body>
   <!-- NAV -->
   <header class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="#top" aria-label="Analyse Inc. home">
-        <div class="logo" aria-hidden="true"></div>
-        <span>Analyse Inc.</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary">
+      <a class="brand" href="#top"><div class="logo"></div><span>Analyse Inc.</span></a>
+      <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#services">Services</a>
         <a href="#clients">Clients</a>
-        <a href="#contact" class="nav-cta button">Contact</a>
+        <a href="#contact" class="button">Contact</a>
       </nav>
     </div>
   </header>
@@ -112,7 +80,7 @@
           <a class="button" href="#services" style="background:transparent;border:1px solid #cbd5e1;color:var(--brand)">Our Services</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="Key capabilities">
+      <aside class="hero-card">
         <strong>What we do</strong>
         <ul>
           <li>System Integration (MES & AVEVA PI)</li>
@@ -129,7 +97,7 @@
     <div class="container">
       <h2 class="section-title">About Us</h2>
       <p class="section-kicker">Pragmatic experts in pharma & biotech manufacturing.</p>
-      <p>Analyse Inc. is a consulting firm specialized in digitalization, automation, and data analytics for the pharmaceutical and manufacturing industries. We help organizations optimize their operations and unlock the full potential of their data through innovative and tailored solutions.</p>
+      <p>Analyse Inc. helps organizations optimize operations and unlock the full potential of their data with innovative and tailored solutions.</p>
     </div>
   </section>
 
@@ -138,30 +106,12 @@
     <div class="container">
       <h2 class="section-title">Services</h2>
       <div class="grid cols-3">
-        <div class="card">
-          <h3>System Integration (MES & PI)</h3>
-          <p>Connecting and optimizing production systems for seamless operations, data integrity, and regulatory compliance.</p>
-        </div>
-        <div class="card">
-          <h3>Data Analytics & AI</h3>
-          <p>Transforming raw data into insights to drive efficiency, quality, and continuous improvement across plants.</p>
-        </div>
-        <div class="card">
-          <h3>Automation & Digital Transformation</h3>
-          <p>Designing and implementing solutions aligned with Industry 4.0 standards—scalable, secure, and value-focused.</p>
-        </div>
-        <div class="card">
-          <h3>Enablement & Training</h3>
-          <p>Upskilling teams with hands-on guidance, best practices, and maintainable frameworks.</p>
-        </div>
-        <div class="card">
-          <h3>Support & Advisory</h3>
-          <p>From roadmap to run: on-demand expertise to accelerate delivery and de-risk critical initiatives.</p>
-        </div>
-        <div class="card">
-          <h3>Validation-Aware Delivery</h3>
-          <p>Approaches mindful of GxP, data integrity, and audit readiness in regulated environments.</p>
-        </div>
+        <div class="card"><h3>System Integration (MES & PI)</h3><p>Connecting and optimizing production systems for seamless operations.</p></div>
+        <div class="card"><h3>Data Analytics & AI</h3><p>Transforming raw data into insights to drive efficiency and quality.</p></div>
+        <div class="card"><h3>Automation & Digital Transformation</h3><p>Industry 4.0 solutions — scalable, secure, and value-focused.</p></div>
+        <div class="card"><h3>Enablement & Training</h3><p>Upskilling teams with best practices and maintainable frameworks.</p></div>
+        <div class="card"><h3>Support & Advisory</h3><p>On-demand expertise to accelerate delivery and de-risk initiatives.</p></div>
+        <div class="card"><h3>Validation-Aware Delivery</h3><p>Mindful of GxP, data integrity, and audit readiness.</p></div>
       </div>
     </div>
   </section>
@@ -170,14 +120,12 @@
   <section id="clients">
     <div class="container">
       <h2 class="section-title">Clients & Experience</h2>
-      <p class="section-kicker">Trusted by leaders in pharma & biotech.</p>
-      <div class="logo-row" aria-label="Selected clients">
+      <div class="logo-row">
         <div class="logo">Sanofi</div>
         <div class="logo">Regeneron</div>
         <div class="logo">ETech Group</div>
         <div class="logo">(Add more)</div>
       </div>
-      <p class="tiny" style="margin-top:10px">Logos are for illustration. Use only if permissions are granted.</p>
     </div>
   </section>
 
@@ -186,36 +134,63 @@
     <div class="container">
       <h2 class="section-title">Contact</h2>
       <div class="contact-card">
-        <ul class="contact-list">
+        <ul>
           <li>Email: <a href="mailto:contact@analyseinc.ca">contact@analyseinc.ca</a></li>
         </ul>
-        <div>
-          <a class="button" href="mailto:contact@analyseinc.ca">Schedule a Conversation</a>
-        </div>
+        <a class="button" href="mailto:contact@analyseinc.ca">Schedule a Conversation</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <div class="container">
-      <div>© 2025 Analyse Inc. · Consulting in Digitalization & Automation</div>
-    </div>
+    <div class="container">© 2025 Analyse Inc. · Consulting in Digitalization & Automation</div>
   </footer>
 
-  <!-- JSON-LD (optional) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Analyse Inc.",
-    "url": "https://www.analyseinc.ca/",
-    "sameAs": ["https://www.linkedin.com/in/soufianehallab"],
-    "description": "Digital Transformation & Automation for Life Sciences",
-    "contactPoint": [{
-      "@type": "ContactPoint",
-      "contactType": "sales",
-      "email": "contact@analyseinc.ca"
-    }]
+  <!-- ✅ Cookie Banner -->
+  <div id="cookie-banner" style="position: fixed; bottom: 0; left: 0; right: 0; background: #222; color: #fff; padding: 15px; font-size: 14px; display: flex; justify-content: space-between; align-items: center; z-index: 9999;">
+    <span>We use cookies for analytics to improve your experience. <a href="/privacy-policy" style="color:#4da6ff;">Learn more</a></span>
+    <div>
+      <button onclick="acceptCookies()" style="margin-left:10px;padding:8px 15px;background:#4CAF50;color:white;border:none;">Accept</button>
+      <button onclick="declineCookies()" style="margin-left:5px;padding:8px 15px;background:#aaa;color:white;border:none;">Decline</button>
+    </div>
+  </div>
+
+  <!-- ✅ Consent Script with GA -->
+  <script>
+  function loadGoogleAnalytics() {
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = "https://www.googletagmanager.com/gtag/js?id=G-GWJC4RP77M";
+    document.head.appendChild(gaScript);
+
+    gaScript.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-GWJC4RP77M');
+    };
+  }
+
+  function acceptCookies() {
+    localStorage.setItem("cookiesAccepted", "true");
+    document.getElementById("cookie-banner").style.display = "none";
+    loadGoogleAnalytics();
+  }
+
+  function declineCookies() {
+    localStorage.setItem("cookiesAccepted", "false");
+    document.getElementById("cookie-banner").style.display = "none";
+  }
+
+  window.onload = function() {
+    const consent = localStorage.getItem("cookiesAccepted");
+    if (consent !== null) {
+      document.getElementById("cookie-banner").style.display = "none";
+      if (consent === "true") {
+        loadGoogleAnalytics();
+      }
+    }
   }
   </script>
 </body>
